@@ -3,4 +3,4 @@
 
 ### [guide for account server api](account_server_api.md)
 
-### [guide for android sdk api](https://github.com/fox-one/foxone-opensdk-docs/blob/master/README.md)
+### [guide for android sdk api](https://github.com/fox-one/foxone-android-opensdk/blob/master/README.md)
