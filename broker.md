@@ -122,3 +122,68 @@ PUT https://api.fox.one/api/broker/user
   }
 }
 ```
+
+## 获取钱包地址
+
+```
+PUT https://api.fox.one/api/wallet/assets/:asset-id
+```
+
+**Http Headers:**
+
+"Authorization: Bearer token"
+
+**Response**
+
+```javascript
+{
+  "code": 0,
+  "data": {
+    "asset": {
+      "accountName": "",
+      "accountTag": "",
+      "assetId": "c6d0c728-2624-429b-8e0d-d9d19b6592fa",
+      "assetKey": "c6d0c728-2624-429b-8e0d-d9d19b6592fa",
+      "balance": 0.0040715,
+      "chain": {
+        "logo": "https://www.fox.one/assets/coins/btc.png",
+        "mixinAssetId": "c6d0c728-2624-429b-8e0d-d9d19b6592fa",
+        "name": "Bitcoin",
+        "symbol": "BTC"
+      },
+      "chainId": "c6d0c728-2624-429b-8e0d-d9d19b6592fa",
+      "changeBtc": 0,
+      "changeUsd": 0.01771034154666372,
+      "coin": {
+        "logo": "https://www.fox.one/assets/coins/btc.png",
+        "mixinAssetId": "c6d0c728-2624-429b-8e0d-d9d19b6592fa",
+        "name": "Bitcoin",
+        "symbol": "BTC"
+      },
+      "confirmations": 12,
+      "icon": "https://images.mixin.one/HvYGJsV5TGeZ-X9Ek3FEQohQZ3fE9LBEBGcOcn4c4BNHovP4fW4YB97Dg5LcXoQ1hUjMEgjbl1DPlKg1TW7kK6XP=s128",
+      "name": "Bitcoin",
+      "priceBtc": 1,
+      "priceUsd": 6413.61433535,
+      "publicKey": "1NsstDwq5uCRYj925w4tCLn1tzZzqhrfzo",
+      "symbol": "BTC"
+    }
+  }
+}
+```
+
+**常用asset id**
+```
+Bitcoin         (BTC)       c6d0c728-2624-429b-8e0d-d9d19b6592fa
+Bitcoin Cash    (BCH)       fd11b6e3-0b87-41f1-a41f-f0e9b49e5bf0
+Dash            (DASH)      6472e7e3-75fd-48b6-b1dc-28d294ee1476
+Dogecoin        (DOGE)      6770a1e5-6086-44d5-b60f-545f9d9e8ffd
+EOS             (EOS)       6cfe566e-4aad-470b-8c9a-2fd35b49c68d
+Ethereum        (ETH)       43d61dcd-e413-450d-80b8-101d5e903357
+ETC             (ETC)       2204c1ee-0ea2-4add-bb9a-b3719cfff93a
+Litecoin        (LTC)       76c802a2-7c88-447f-a93e-c29c9e5dd9c8
+NEM             (XEM)       27921032-f73e-434e-955f-43d55672ee31
+Ripple          (XRP)       23dfb5a5-5d7b-48b6-905f-3970e3176e27
+Siacoin         (SC)        990c4c29-57e9-48f6-9819-7d986ea44985
+Zcash           (ZEC)       c996abc9-d94e-4494-b1cf-2a3fd3ac5714
+```
