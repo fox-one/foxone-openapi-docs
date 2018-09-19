@@ -18,7 +18,7 @@ Fox.ONE OpenSDK 项目是为了区块链钱包、资产及交易提供的一体�
 * 系统安全与使用简易
 
 
-![](./assets/req.jpg)
+![](./assets/req.jpg?v1)
 
 
 
@@ -31,7 +31,7 @@ Mixin 业务专注于底层区块链
 给出更合适、更易用的解决方案
 
 
-![](./assets/archi.jpg)
+![](./assets/archi.jpg?v1)
 
 
 
