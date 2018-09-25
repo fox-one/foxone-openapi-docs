@@ -179,6 +179,7 @@ P
 POST https://your_host_name:port/snapshot"
 ```
 **签名**
+
 请求的头部中包含有签名
 ```
 "fox-signature":signature
@@ -195,7 +196,7 @@ signature的生成规则如下
   method := "POST"
   uri := "/snapshot"
   
-  payload为POST请求的body，json格式的字符串，其中包含的信息如下
+  payload为POST请求的body,json格式的字符串, 其中包含的信息如下
   {
     "snapshotId":"fb2486b9-8f7c-4c84-b676-c9084f155a02",
     "traceId":"39fc3342-0630-4c4d-95a5-af01953b6baf",
