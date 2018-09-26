@@ -173,19 +173,22 @@ P
 ```
 
 ## 转账提醒
+
 **请求**
 
 ```
   POST your_callback_url
 ```
+
 **签名**
 
 请求的头部中包含有签名
+
 ```
   "fox-signature":signature
 ```
 
-signature的生成规则如下
+signature 的生成规则如下
 
 ```go
   method := "POST"
@@ -196,38 +199,45 @@ signature的生成规则如下
 
 其中
 
-payload为POST请求的body,json格式的字符串,包含的信息如下
+payload 为 POST 请求的 body,json 格式的字符串,包含的信息如下
 
 ```javascript
   {
-    "foxId":"7488887d-3232-3048-a272-d90efd1d6b73",
-    "type":"snapshot",
-    "data":
-    {
-      "snapshotId":"fb2486b9-8f7c-4c84-b676-c9084f155a02",
-      "traceId":"39fc3342-0630-4c4d-95a5-af01953b6baf",
-      "assetId":"965e5c6e-434c-3fa9-b780-c50f43cd955c",
-      "userId":"451183a9-1da1-3adf-9cb8-c81d295debcf",
-      "createdAt":1537867131494600000,
-      "opponentId":"825d5134-c921-3cf9-a83b-848b73c9e83b",
-      "source":"TRANSFER_INITIALIZED","amount":"321","memo":"created by foxone",
-      "asset":
-      {
+    "foxId":"7488887d-3232-3048-a272-d90efd1d6b73", // 相关用户的 fox id
+    "type":"snapshot", // 消息类型
+    "data": {
+      "snapshotId":"fb2486b9-8f7c-4c84-b676-c9084f155a02", // snapshot id form mixin,可作为转账的唯一 id
+      "traceId":"39fc3342-0630-4c4d-95a5-af01953b6baf",    // trace id，ignore
+      "assetId":"965e5c6e-434c-3fa9-b780-c50f43cd955c",    // mixin 上面 coin/token 的 id，常用 asset id 见下面
+      "userId":"451183a9-1da1-3adf-9cb8-c81d295debcf",     // 相关用户在 mixin 上的 user id
+      "createdAt":1537867131494600000,                     // 交易时间
+      "opponentId":"825d5134-c921-3cf9-a83b-848b73c9e83b",  // 交易对面方的 mixin user id，如果是 mixin 内部转账的话会有这个信息
+      "source":"TRANSFER_INITIALIZED",
+      "amount":"321",                                       // 转账金额，如果是收款，则是正数；否则是负数
+      "memo":"created by foxone",                           // 转账备注
+      "asset": {                                            // 转的 coin/token 的详细信息
         "assetId":"965e5c6e-434c-3fa9-b780-c50f43cd955c",
         "assetKey":"0xec2a0550a2e4da2a027b3fc06f70ba15a94a6dac",
-        "chainId":"43d61dcd-e413-450d-80b8-101d5e903357",
+        "chainId":"43d61dcd-e413-450d-80b8-101d5e903357",   // token 所在的主链的 asset id
         "icon":"https://images.mixin.one/0sQY63dDMkWTURkJVjowWY6Le4ICjAFuu3ANVyZA4uI3UdkbuOT5fjJUT82ArNYmZvVcxDXyNjxoOv0TAYbQTNKS=s128",
         "name":"Chui Niu Bi",
         "symbol":"CNB"
       },
-      "sender":"",
-      "receiver":"",
-      "transactionHash":""
+      "sender":"",            // 交易转出方的钱包地址，仅在 mixin 和外部链上进行转账才会有，mixin 内部转账没有这个信息
+      "receiver":"",          // 交易收款方的钱包地址，仅在 mixin 和外部链上进行转账才会有，mixin 内部转账没有这个信息
+      "transactionHash":""    // 链上的 transaction hash，仅在 mixin 和外部链上进行转账才会有，mixin 内部转账没有这个信息
     }
   }
 ```
 
-**常用asset id**
+**消息类型列表**
+
+| type     | desc                      |
+| -------- | ------------------------- |
+| snapshot | 转账通知（包括收款和转出) |
+
+**常用 asset id**
+
 ```
 Bitcoin         (BTC)       c6d0c728-2624-429b-8e0d-d9d19b6592fa
 Bitcoin Cash    (BCH)       fd11b6e3-0b87-41f1-a41f-f0e9b49e5bf0
@@ -242,4 +252,3 @@ Ripple          (XRP)       23dfb5a5-5d7b-48b6-905f-3970e3176e27
 Siacoin         (SC)        990c4c29-57e9-48f6-9819-7d986ea44985
 Zcash           (ZEC)       c996abc9-d94e-4494-b1cf-2a3fd3ac5714
 ```
-
