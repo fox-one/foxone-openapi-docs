@@ -176,24 +176,29 @@ P
 **请求**
 
 ```
-POST your_callback_url
+  POST your_callback_url
 ```
 **签名**
 
 请求的头部中包含有签名
 ```
-"fox-signature":signature
+  "fox-signature":signature
 ```
+
 signature的生成规则如下
+
+```go
+  method := "POST"
+  h := hmac.New(sha256.New, []byte(your_app_secret))
+  h.Write([]byte(method + your_callback_url + payload))
+  signature := base64.StdEncoding.EncodeToString(h.Sum(nil))
 ```
-	method := "POST"
-	h := hmac.New(sha256.New, []byte(your_app_secret))
-	h.Write([]byte(method + your_callback_url + payload))
-	signature := base64.StdEncoding.EncodeToString(h.Sum(nil))
-```
+
 其中
-```
-  payload为POST请求的body,json格式的字符串,包含的信息如下
+
+payload为POST请求的body,json格式的字符串,包含的信息如下
+
+```javascript
   {
     "foxId":"7488887d-3232-3048-a272-d90efd1d6b73",
     "type":"snapshot",
