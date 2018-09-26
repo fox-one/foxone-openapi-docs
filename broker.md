@@ -176,7 +176,7 @@ P
 **请求**
 
 ```
-POST https://your_host_name:port/snapshot"
+POST your_callback_url
 ```
 **签名**
 
@@ -186,38 +186,39 @@ POST https://your_host_name:port/snapshot"
 ```
 signature的生成规则如下
 ```
-	h := hmac.New(sha256.New, []byte(secret))
-	h.Write([]byte(method + uri + payload))
+	method := "POST"
+	h := hmac.New(sha256.New, []byte(your_app_secret))
+	h.Write([]byte(method + your_callback_url + payload))
 	signature := base64.StdEncoding.EncodeToString(h.Sum(nil))
 ```
 其中
 ```
-  secret := YOUR_APP_SECRET
-  method := "POST"
-  uri := "/snapshot"
-  
-  payload为POST请求的body,json格式的字符串, 其中包含的信息如下
+  payload为POST请求的body,json格式的字符串,包含的信息如下
   {
-    "snapshotId":"fb2486b9-8f7c-4c84-b676-c9084f155a02",
-    "traceId":"39fc3342-0630-4c4d-95a5-af01953b6baf",
-    "assetId":"965e5c6e-434c-3fa9-b780-c50f43cd955c",
-    "userId":"451183a9-1da1-3adf-9cb8-c81d295debcf",
-    "createdAt":1537867131494600000,
-    "opponentId":"825d5134-c921-3cf9-a83b-848b73c9e83b",
-    "source":"TRANSFER_INITIALIZED","amount":"321","memo":"created by foxone",
-    "asset":
-      {
+    "foxId":"7488887d-3232-3048-a272-d90efd1d6b73",
+    "type":"snapshot",
+    "data":
+    {
+      "snapshotId":"fb2486b9-8f7c-4c84-b676-c9084f155a02",
+      "traceId":"39fc3342-0630-4c4d-95a5-af01953b6baf",
       "assetId":"965e5c6e-434c-3fa9-b780-c50f43cd955c",
-      "assetKey":"0xec2a0550a2e4da2a027b3fc06f70ba15a94a6dac",
-      "chainId":"43d61dcd-e413-450d-80b8-101d5e903357",
-      "icon":"https://images.mixin.one/0sQY63dDMkWTURkJVjowWY6Le4ICjAFuu3ANVyZA4uI3UdkbuOT5fjJUT82ArNYmZvVcxDXyNjxoOv0TAYbQTNKS=s128",
-      "name":"Chui Niu Bi",
-      "symbol":"CNB",
-      "coinId":2437
+      "userId":"451183a9-1da1-3adf-9cb8-c81d295debcf",
+      "createdAt":1537867131494600000,
+      "opponentId":"825d5134-c921-3cf9-a83b-848b73c9e83b",
+      "source":"TRANSFER_INITIALIZED","amount":"321","memo":"created by foxone",
+      "asset":
+      {
+        "assetId":"965e5c6e-434c-3fa9-b780-c50f43cd955c",
+        "assetKey":"0xec2a0550a2e4da2a027b3fc06f70ba15a94a6dac",
+        "chainId":"43d61dcd-e413-450d-80b8-101d5e903357",
+        "icon":"https://images.mixin.one/0sQY63dDMkWTURkJVjowWY6Le4ICjAFuu3ANVyZA4uI3UdkbuOT5fjJUT82ArNYmZvVcxDXyNjxoOv0TAYbQTNKS=s128",
+        "name":"Chui Niu Bi",
+        "symbol":"CNB"
       },
       "sender":"",
       "receiver":"",
       "transactionHash":""
+    }
   }
 ```
 
