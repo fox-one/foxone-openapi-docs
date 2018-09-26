@@ -206,8 +206,8 @@ payload 为 POST 请求的 body,json 格式的字符串,包含的信息如下
     "foxId":"7488887d-3232-3048-a272-d90efd1d6b73", // 相关用户的 fox id
     "type":"snapshot", // 消息类型
     "data": {
-      "snapshotId":"fb2486b9-8f7c-4c84-b676-c9084f155a02", // snapshot id form mixin,可作为转账的唯一 id
-      "traceId":"39fc3342-0630-4c4d-95a5-af01953b6baf",    // trace id，ignore
+      "snapshotId":"fb2486b9-8f7c-4c84-b676-c9084f155a02", // snapshot id from mixin,可作为转账的唯一 id
+      "traceId":"39fc3342-0630-4c4d-95a5-af01953b6baf",    // trace id from mixin，ignore
       "assetId":"965e5c6e-434c-3fa9-b780-c50f43cd955c",    // mixin 上面 coin/token 的 id，常用 asset id 见下面
       "userId":"451183a9-1da1-3adf-9cb8-c81d295debcf",     // 相关用户在 mixin 上的 user id
       "createdAt":1537867131494600000,                     // 交易时间
