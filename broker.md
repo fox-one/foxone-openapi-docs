@@ -84,7 +84,8 @@ POST https://api.fox.one/api/broker/login
     "user": {
       "avatar": "https://www.fox.one/123456.png",
       "fox_id": "f2e6ae4a-97c3-3012-99d8-5a715b0d75bd",
-      "name": "haha"
+      "name": "haha",
+      "isPinSet": false // true or false
     }
   }
 }
