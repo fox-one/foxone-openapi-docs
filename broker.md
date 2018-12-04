@@ -123,6 +123,38 @@ PUT https://api.fox.one/api/broker/user
 }
 ```
 
+## 查询用户基本资料
+
+```
+POST https://api.fox.one/api/broker/user/detail
+```
+
+**Parameters:**
+
+| Name      | Type   | Description |
+| --------- | ------ | ----------- |
+| appid     | string | app id      |
+| timestamp | int    | timestamp   |
+| nonce     | string | uuid nonce  |
+| sign      | string | sign        |
+| fox_id    | string | fox id      |
+
+**Response**
+
+```javascript
+{
+  "code": 0,
+  "data": {
+    "user": {
+      "avatar": "https://www.fox.one/123456.png",
+      "fox_id": "f2e6ae4a-97c3-3012-99d8-5a715b0d75bd",
+      "name": "haha",
+      "isPinSet": false // true or false
+    }
+  }
+}
+```
+
 ## 获取钱包地址
 
 ```
