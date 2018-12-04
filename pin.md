@@ -32,6 +32,24 @@ PUT /api/account/pin
 }
 ```
 
+## 校验 pin （在 pin 已经设置的情况下）
+
+```
+PUT /api/account/pin-verify
+```
+
+| Name           | Description                                     |
+| -------------- | ----------------------------------------------- |
+| Authorization  | "Bearer " + token                               |
+| fox-client-pin | 用户原来的 pin 生成的 pin token，生成方式见下文 |
+
+```javascript
+{
+    "code" : 0,
+    "data" : {} // 校验成功
+}
+```
+
 ## 转账到钱包
 
 ```
