@@ -2,6 +2,7 @@
 
 > indexs for all foxone opensdk 
 
+- https://open.fox.one/
 
 Fox.ONE OpenSDK 项目是为了区块链钱包、资产及交易提供的一体化解决方案。
 
@@ -22,7 +23,7 @@ Fox.ONE OpenSDK 项目是为了区块链钱包、资产及交易提供的一体�
 
 
 
-## 方案
+## 方案及架构
 
 Mixin 业务专注于底层区块链
 
@@ -49,12 +50,6 @@ Mixin 业务专注于底层区块链
 
 - iOS https://github.com/fox-one/foxone-ios-opensdk
 - Android https://github.com/fox-one/foxone-android-opensdk
+- Web & Node.js https://github.com/fox-one/foxone-js-opensdk
 
-
-
-### 1. [guide for account server api](account_server_api.md)
-
-### 2. [guide for android sdk api](https://github.com/fox-one/foxone-android-opensdk/blob/master/README.md)
-
-### 3. [broker](broker.md)
 
