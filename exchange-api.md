@@ -1,10 +1,12 @@
-[TOC]
-
-# REST接口
+# Exchange REST 接口
 
 ## info
-  host  _```https://openapi.fox.one```_
-## table
+
+
+  - host: `https://openapi.fox.one`
+
+
+## API 简要
 
 |attribute| method | uri                                                 |  description              |
 |--------|--------|-----------------------------------------------------|---------------------------|
