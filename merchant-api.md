@@ -119,18 +119,30 @@ func SignAuthenticationToken(method, uri, body string, key, secret string) (stri
 #### - Return:
 
 ```javascript
-{
-    "member": {
-        "id": "xxx",
-        "created_at": 123,
-        "is_pin_set": false,
-    },
-    "session": {
-        "key": "xxx",
-        "secret": "xxx",
-        "created_at": 123,
-        "expired_at": 123,
-    }
+{  
+   "member":{  
+      "id":"987aeabe84654087bb3cb5ca602c7b1f",
+      "created_at":1562125853,
+      "is_pin_set":false
+   },
+   "session":{  
+      "key":"874869407833634c678ff766dbc4b472-987aeabe84654087bb3cb5ca602c7b1f",
+      "secret":"79ce901ee75bc9afc48856b0c3109370",
+      "created_at":1562125853,
+      "expired_at":1562212253
+   },
+   "wallets":[  
+      {  
+         "label":"",
+         "member_id":"987aeabe84654087bb3cb5ca602c7b1f",
+         "service":"payment",
+         "wallet_id":"874ac4c9-0042-3099-8e2e-28111928510a",
+         // the session_id and session_key are only available when you create a member
+         // the wallet_id 、 session_id and session_key can be used to access Mixin Api
+         "session_id":"75bd97b5-724b-4f54-bcde-a412fd776794",
+         "session_key":"-----BEGIN RSA PRIVATE KEY-----\nMIICXAIBAAKBgQDZ2RYv1EM4sqXB7YURO7YgMPCih3OO+G6ERZpxYcPItI34fXa/\nUo9aLvi1doiyONM1F40lE9fr1Ahx6rmmzJPPNFcKH6lhDlenSWKVrg4KKFcK/EMD\nxHgGZxzfJB3sPOWLnCIgNwk1rffQGVcumWF3E8aND00Nl7D1IVlLk2N3OwIDAQAB\nAoGATp0adpQg1fsR+hOeq4Niy+cdT2mV+AgKyczcWQIwxuLxQLT1/0Dp3l+I/OMT\nnU0IWuZu1ux8ROw1R/aunFTDGZ5OMUE9kr3w5xDdMV7cdTxJNwweUJW6Hz6raoe3\nTheR8J7PHkDp2tObU69PrrZrUScj3v8Eybpy7R6v4/jDg5ECQQDe8/nNjJkuUUqC\nVuCjyEylteulvSiC7hGF85tHUgWZ9HZJ5tM2Uww39qONYJzv3CzIZGS2pomtz06b\n7GJn9UPNAkEA+iNmDp+VogacfkJCn9NuqAi4Z2qBkETSFLjZqWG8btqQ82lhTyqi\n+57wNDRriYBb3lkFLbkEYyb/PkEK72GvJwJABWAEabw2BTPYhAPsLoapsmUMZVaG\nH4H10jDpUXLcx7VpFKcH+ItQBBliIApwPigkvEAPXYfuUc5pqsCsLq1vEQJBANwA\nUF3iPDAiknd1/bUmt/ewm8fRZB0oeoFhR4dzf9EcCUsdT0na3ThjxS6VQFPSgnqg\nXy6kwNgYT3xIpr5+cxcCQA8f2VcFt/3QT/uOpmQtA4AbmH/A7fbycZ1RG7I13FtH\nROhqSZrBCS2IYdYJ+RrNJhhW6Nmu21mEvu7fwFNVu+g=\n-----END RSA PRIVATE KEY-----\n"
+      }
+   ]
 }
 ```
 
