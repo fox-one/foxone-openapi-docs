@@ -63,7 +63,7 @@ like `/member/info` -> `/merchant/member/info`
     GET /member/info
 ```
 
-** Return **
+**Return**
 
 ```javascript
 {  
@@ -92,7 +92,7 @@ Otherwise put decrypted pin in token to modify pin.
 }
 ```
 
-** Return **
+**Return**
 
 ```javascript
 {}
@@ -104,7 +104,7 @@ Otherwise put decrypted pin in token to modify pin.
     POST /member/pin
 ```
 
-** Return **
+**Return**
 
 ```javascript
 {}
