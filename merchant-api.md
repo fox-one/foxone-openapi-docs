@@ -245,7 +245,7 @@ qrYnTJbX/WysMtg+vhVy7DJznwx5sPl1huPO5ytfwTagKgQArF34WfLEB7OIZuZL
 
 ### > 获取用户信息
 
-- URL: /member/info
+- URL: /merchant/member/info
 - Method: GET
 
 
@@ -259,15 +259,12 @@ qrYnTJbX/WysMtg+vhVy7DJznwx5sPl1huPO5ytfwTagKgQArF34WfLEB7OIZuZL
 }
 ```
 
-
-
-
 ### > 为用户设置 PIN 
 
-- PUT /member/pin
+- PUT /merchant/member/pin
 
 ### -jwt payload
-
+``` javascript
 {
   "exp": 1562211730,
   "key": "944dd94adc135c94be3dc9f6c1c6ed43",
@@ -275,10 +272,17 @@ qrYnTJbX/WysMtg+vhVy7DJznwx5sPl1huPO5ytfwTagKgQArF34WfLEB7OIZuZL
   "pin": "GffHqNSvfHb58s23NhprcAuPsT5Zjyjc7Un5WJa3obxbbXx0Y6YWHthMK2ptwlSbgJsPrsJv1WxbteEhYx7rQDOWzq6cMWrDIhklMuZc1h8fRj0mWmeGDbqiZoiixypfqdrEevLCW3avg1QjmMyecT2tvGBrkpA8CSD1SGLu7B3OXJV6Brjpo1Dur2+8H/61V/9CSTaFBZ3PxoMJE9K4GD9jgDohvL0S4+unjkS49g7yYMIpA8T14wpLOYHetRIBcuqk2kuAUmr/VhuWcLKe3sql1ascf8EaKChOP9rvbw+ybydZT+Jd7Dpek+T0KiuH891GU+XSybFQnVZs3B9g1g==",  // if required
   "sign": "QO6wsapg5iiBk6tRcFlhg/7D+1r4vmHCcmvn7oDrW+s="
 }
+```
 
 ### Note
-    pin 的加密方式参见member_api.md
-
+pin为使用RSA OAEP算法对pin加密后的结果，加密时需包含如下信息
+```javascript
+{
+    "t": 1562199964,                // current unix timestamp
+    "n": "somethin unique",         // nonce, usually the uuid
+    "p": "123456"                   // your raw pin
+}
+```
 
 > If `is_pin_set` is false, do not put pin in the authorization token.
 Namely if the member is newly created, use this api to set pin without decrypted pin in token.
@@ -294,7 +298,7 @@ Otherwise put decrypted pin in token to modify pin.
 
 ### >  Verify PIN
 
-- POST /member/pin
+- POST /merchant/member/pin
 
 
 #### - Return:
