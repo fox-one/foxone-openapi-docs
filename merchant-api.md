@@ -232,6 +232,53 @@ qrYnTJbX/WysMtg+vhVy7DJznwx5sPl1huPO5ytfwTagKgQArF34WfLEB7OIZuZL
 ```
 
 
+### > 获取用户信息
+
+- URL: /member/info
+- Method: GET
+
+
+#### - Return:
+
+```javascript
+{  
+   "id":"e82e7a6ed335451b83fe33e7477b03ac",
+   "created_at":1562142129,
+   "is_pin_set":false
+}
+```
+
+
+
+
+### > 为用户设置 PIN 
+
+- PUT /member/pin
+
+> If `is_pin_set` is false, do not put pin in the authorization token.
+Namely if the member is newly created, use this api to set pin without decrypted pin in token.
+Otherwise put decrypted pin in token to modify pin.
+
+#### - Params:
+
+```javascript
+{
+    "pin" : "mAvjFxe8Ozkr8pO7xImEL0H83Ja6JCkVS0mT029V+nC3pM9xjHZFX50882+iY+GNNhqVQC2cWHkiYJBoum9BkW3NhL0js4AFULRKFXoKnkMOoXlgAKcYZmE/cihJnwR6L6KeN7c8ycTYPUNBnSxvkvT2PcD59xBqDEyXcB4LnaL5AncpevtTAiejFE25u2CsLl/4EB0s42+yxbj5CTob73RUhgVndJB9b38MEQn7cDKmod/Uej7/T+/K47DMEvOmndt+YGNlK8iBfViO6T/QOZC0JKs5yWkaZ8wyfRyW9bT1oqDriIzVvFxHCQXPWVPoK/h25EEfHOVfdzBXLgGM2g=="
+}
+```
+
+### >  Verify PIN
+
+- POST /member/pin
+
+
+#### - Return:
+
+``` javascript
+{}
+```
+
+
 
 ### > 查询用户业务钱包列表
 

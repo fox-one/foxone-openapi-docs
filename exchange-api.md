@@ -1,12 +1,16 @@
 # Exchange REST 接口
 
-## info
+<br>
+
+## ▎info
 
 
   - host: `https://openapi.fox.one`
 
 
-## API 简要
+<br>
+
+## ▎API 简要
 
 |attribute| method | uri                                                 |  description              |
 |--------|--------|-----------------------------------------------------|---------------------------|
@@ -26,7 +30,11 @@
 | private| PUT    | [/member/exchange/listen_key](#reset_listen_key)    | 重置listen key |
 | private| DELETE | [/member/exchange/listen_key](#delete_listen_key)   | 删除listen key |
 
-## signature
+
+
+<br>
+
+## ▎signature
   1. 基于安全考虑，所有private类型接口的请求都必须进行签名，并在请求的头部添加 "Authorization: Bearer token", 其中token为生成的jwt。
   2. jwt的payload中包含三个字段exp, sign, key，其中exp为过期时间(Unix time),用户自行指定。sign为请求的method,uri,body进行SHA-256运算并base64后的结果。
   3. jwt的签名算法为HS256 (HMAC with SHA-256),签名私钥为字节形式的secret。key, secret由商户申请或用户登录后给出。
@@ -90,7 +98,10 @@ cURL Example
 curl -i -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NjEwMTgyODMsImtleSI6ImYyNzY5ZDBkYWM2NTQzODVhZWZlOTZiNjlmZWJhMjA2YnhkIiwic2lnbiI6ImFDaTNiQi9SSllXMjhXMVZyZUJxeTVJai9CZlhMa09JN3R6NGYybzc3ZEE9In0.htm-X4jAXMLSabvZePdoBlELHTfm1glapBp1Sa12sko" https://openapi.fox.one/member/exchange/order -X POST --data '{"_nonce": "94e988fc-d5cc-4080-9cff-dcb25b3fc2e7","_ts":1553242283,"amount": "0.4","price": "3.5","side": "ASK","symbol": "EOSUSDT","type": "LIMIT"}'
 ```
 
-## details
+
+<br>
+
+## ▎details
 
 1. <span id="assets">GET /exchange/market/assets </span>
 

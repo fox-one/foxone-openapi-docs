@@ -2,6 +2,7 @@
 
 
 <br>
+
 ## ▎Fox.ONE Payment 业务接入说明。
 
 Payment Service 提供了两种层面的接入方式：
@@ -17,12 +18,15 @@ Payment Service 提供了两种层面的接入方式：
 
 
 <br>
+
 ## ▎HOST
 
 * 测试环境：https://dev-gateway.fox.one
 * 生产环境：https://openapi.fox.one
 
+
 <br>
+
 ## ▎API 详情
 
 ### > 读取用户某币种余额
@@ -93,6 +97,7 @@ Payment Service 提供了两种层面的接入方式：
 ```
 
 <br>
+
 ### >  读取转账记录列表
 
 ##### APP 接口
@@ -189,6 +194,7 @@ Payment Service 提供了两种层面的接入方式：
 ```
 
 <br>
+
 ### > 提现
 
 ##### APP 接口
