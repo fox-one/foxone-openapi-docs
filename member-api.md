@@ -51,12 +51,6 @@ qrYnTJbX/WysMtg+vhVy7DJznwx5sPl1huPO5ytfwTagKgQArF34WfLEB7OIZuZL
 -----END RSA PUBLIC KEY-----
 ```
 
-## Note
-You can use merchant key/secret or member key/secret to access the api below.
-When merchant key/secret is used, you need put `/merchant` before every uri, 
-like `/member/info` -> `/merchant/member/info`
-
-
 ## GET Info
 
 ```

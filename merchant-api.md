@@ -266,6 +266,20 @@ qrYnTJbX/WysMtg+vhVy7DJznwx5sPl1huPO5ytfwTagKgQArF34WfLEB7OIZuZL
 
 - PUT /member/pin
 
+### -jwt payload
+
+{
+  "exp": 1562211730,
+  "key": "944dd94adc135c94be3dc9f6c1c6ed43",
+  "mem": "bfbebc70de9f40f7a35ea247bdf7b5ce",
+  "pin": "GffHqNSvfHb58s23NhprcAuPsT5Zjyjc7Un5WJa3obxbbXx0Y6YWHthMK2ptwlSbgJsPrsJv1WxbteEhYx7rQDOWzq6cMWrDIhklMuZc1h8fRj0mWmeGDbqiZoiixypfqdrEevLCW3avg1QjmMyecT2tvGBrkpA8CSD1SGLu7B3OXJV6Brjpo1Dur2+8H/61V/9CSTaFBZ3PxoMJE9K4GD9jgDohvL0S4+unjkS49g7yYMIpA8T14wpLOYHetRIBcuqk2kuAUmr/VhuWcLKe3sql1ascf8EaKChOP9rvbw+ybydZT+Jd7Dpek+T0KiuH891GU+XSybFQnVZs3B9g1g==",  // if required
+  "sign": "QO6wsapg5iiBk6tRcFlhg/7D+1r4vmHCcmvn7oDrW+s="
+}
+
+### Note
+    pin 的加密方式参见member_api.md
+
+
 > If `is_pin_set` is false, do not put pin in the authorization token.
 Namely if the member is newly created, use this api to set pin without decrypted pin in token.
 Otherwise put decrypted pin in token to modify pin.
