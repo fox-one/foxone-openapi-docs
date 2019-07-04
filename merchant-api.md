@@ -11,6 +11,7 @@
 * 测试环境：https://dev-gateway.fox.one
 * 生产环境：https://openapi.fox.one
 
+
 <br>
 
 ## ▎请求签名 & HTTP Authorization
@@ -61,9 +62,18 @@ func SignAuthenticationToken(method, uri, body string, key, secret string) (stri
 }
 ```
 
-#### - RSA的公钥为
 
-**prod:**
+### > PIN 签名的 RSA的公钥
+
+公钥是固定的，但在不同的环境中需要设置相对应环境变量所使用的值，变量  key 为：`FOX_GATEWAY_PUBLIC_KEY`
+
+
+```
+os.SetEnv("FOX_GATEWAY_PUBLIC_KEY","pk")
+```
+
+
+- **prod:**
 
 ```text
 -----BEGIN RSA PUBLIC KEY-----
@@ -77,7 +87,7 @@ kwIDAQAB
 -----END RSA PUBLIC KEY-----
 ```
 
-**dev:**
+- **dev:**
 
 ```text
 -----BEGIN RSA PUBLIC KEY-----
@@ -90,6 +100,7 @@ qrYnTJbX/WysMtg+vhVy7DJznwx5sPl1huPO5ytfwTagKgQArF34WfLEB7OIZuZL
 +QIDAQAB
 -----END RSA PUBLIC KEY-----
 ```
+
 
 
 <br>
