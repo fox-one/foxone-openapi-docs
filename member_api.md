@@ -7,11 +7,11 @@
 {
   "exp": 1562199964,
   "key": "2c4462569ead43de76a157bb9a3d3d34-8a915638d50c44378148fb89f83c5d86",
-  "pin": "176mH4AD1yzZy9KJmapgGm8IklzVOMR2Fx59D/ww8j09kxBM5MCBLfJHeK3crJqb1FsPjD2BGVnKYhipjUJlEy2Qz7LnaZy7mKZotKMDOX0dvtUpyiIzt5FiSU3LesOvSM5381UcB5CEvgOp9+qkcRJ3JmPQTFmU2Xwo4piPJahh21+PnEy6KTCsq2bngkou547vJ2kfTLsB/pkeLaAXxTx9Hrk1bAORNGe8MHxPn4Es1qkvJVOjrVxqh2yL7oGQD2cx1HC+BTgjkRQPxqzVgYTeN4x+iawLxzwKVe5evPQP8TBYAlvmA1F8VqKySj4FqUxNUfWz4jma1jxplqxMuQ==",
+  "pin": "176mH4AD1yzZy9KJmapgGm8IklzVOMR2Fx59D/ww8j09kxBM5MCBLfJHeK3crJqb1FsPjD2BGVnKYhipjUJlEy2Qz7LnaZy7mKZotKMDOX0dvtUpyiIzt5FiSU3LesOvSM5381UcB5CEvgOp9+qkcRJ3JmPQTFmU2Xwo4piPJahh21+PnEy6KTCsq2bngkou547vJ2kfTLsB/pkeLaAXxTx9Hrk1bAORNGe8MHxPn4Es1qkvJVOjrVxqh2yL7oGQD2cx1HC+BTgjkRQPxqzVgYTeN4x+iawLxzwKVe5evPQP8TBYAlvmA1F8VqKySj4FqUxNUfWz4jma1jxplqxMuQ==",  // if required.
   "sign": "9+PC7wSAqnqVqQdgEkFmt3ObxTpPdLR4YO8BlB7jv6c="
 }
 ```
-exp, key, sign字段含义同merchant-api.md, 其中pin为使用RSA OAEP算法对pin加密后的结果，加密时需包含如下信息
+exp, key, sign字段含义同merchant-api.md,pin，其中pin为使用RSA OAEP算法对pin加密后的结果，加密时需包含如下信息
 
 ```javascript
 {
